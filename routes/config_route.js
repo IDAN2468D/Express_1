@@ -2,6 +2,7 @@ const indexR = require(".");
 const indexS = require("./users");
 const shopS = require("./shop");
 const foodsR = require("./foods");
+const appliances = require("./appliances")
 
 
 exports.routesInit = (app) => {
@@ -9,4 +10,5 @@ exports.routesInit = (app) => {
     app.use("/users", indexS)
     app.use("/shop", shopS)
     app.use("/foods", foodsR)
+    app.use("/appliances", appliances)
 }
