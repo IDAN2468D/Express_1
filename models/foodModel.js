@@ -5,7 +5,8 @@ const foodSchema = new mongoose.Schema({
     name: String,
     img: String,
     cal: Number,
-    price: Number
+    price: Number,
+    Details: Array
 });
 
 const FoodModel = mongoose.model("foods", foodSchema);
