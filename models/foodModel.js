@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 
 const foodSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     img: String,
     cal: Number,
     price: Number,
