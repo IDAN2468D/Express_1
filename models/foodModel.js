@@ -9,11 +9,11 @@ const foodSchema = new mongoose.Schema({
     img: String,
     cal: {
         type: Number,
-        required: true
+        required: false
     },
     price: {
         type: Number,
-        required: true
+        required: false
     },
     Details: Array
 });
