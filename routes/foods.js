@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     res.json(data)
 })
 
-router.post("/", async (req, res) => {
+router.post("/post", async (req, res) => {
     const validBady = validFood(req.body);
     if (validBady.error) {
         return res.status(400).json(validBady.error.details);
