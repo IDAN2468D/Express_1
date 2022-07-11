@@ -18,7 +18,10 @@ const foodSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    Details: Array
+    Details: {
+        type: Array,
+        required: false
+    }
 });
 
 const FoodModel = mongoose.model("foods", foodSchema);
