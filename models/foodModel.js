@@ -4,7 +4,7 @@ const Joi = require("joi");
 const foodSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: false
+        required: true
     },
     img: String,
     cal: {
