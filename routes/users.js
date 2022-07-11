@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
     res.json({ msg: "express work perfect 12:36" })
 })
 
-router.post("/Register", async (req, res) => {
+router.post("/", async (req, res) => {
     const validBady = validUser(req.body);
     if (validBady.error) {
         return res.status(400).json(validBady.error.details);
