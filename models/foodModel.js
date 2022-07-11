@@ -6,7 +6,10 @@ const foodSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    img: String,
+    img: {
+        type: String,
+        require: false
+    },
     cal: {
         type: Number,
         required: false
@@ -25,7 +28,7 @@ exports.FoodModel = FoodModel;
 
 exports.validFood = (_bodyData) => {
     const joiSchema = Joi.object({
-        name: Joi.string().min(2).max(99).required(true),
+        name: Joi.string().min(2).max(99),
         img: Joi.string().min(2).max(300),
         cal: Joi.number().min(1).max(9999),
         price: Joi.number().min(1).max(9999),
