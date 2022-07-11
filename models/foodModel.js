@@ -25,7 +25,7 @@ exports.FoodModel = FoodModel;
 
 exports.validFood = (_bodyData) => {
     const joiSchema = Joi.object({
-        name: Joi.string().min(2).max(99),
+        name: Joi.string().min(2).max(99).required(),
         img: Joi.string().min(2).max(300),
         cal: Joi.number().min(1).max(9999),
         price: Joi.number().min(1).max(9999),
