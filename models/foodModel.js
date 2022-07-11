@@ -4,19 +4,19 @@ const Joi = require("joi");
 const foodSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: false
     },
     img: {
         type: String,
-        require: true
+        require: false
     },
     cal: {
         type: Number,
-        required: true
+        required: false
     },
     price: {
         type: Number,
-        required: true
+        required: false
     },
     Details: Array
 });
