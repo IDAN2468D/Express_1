@@ -38,7 +38,7 @@ router.post("/login", async (req, res) => {
     if (!passValid) {
         return res.status(400).json({ msg: "Password worng" })
     }
-    res.json({ msg: "all good need send token" })
+    res.json(user)
 })
 
 
