@@ -15,7 +15,7 @@ router.get("/usersInfo", async (req, res) => {
     }
     try {
         let decodeToken = jwt.verify(token, "MONKYSSECRET");
-        let user = await UsersModel.findOne({ _id: decodeToken._id });
+        let user = await UsersModel.findOne({ _id: decodeToken._id }, { pass: 0 });
         res.json(user)
     }
     catch (err) {
