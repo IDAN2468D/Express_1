@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const { UsersModel, validUser, validLogin, genToken } = require("../models/UsersModel");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
 
 router.get("/", (req, res) => {
     res.json({ msg: "express work perfect 12:36" })
