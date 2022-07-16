@@ -7,6 +7,14 @@ router.get("/", (req, res) => {
     res.json({ msg: "express work perfect 12:36" })
 })
 
+router.get("/userInfo", async (req, res) => {
+    let token = req.header("x-api-key");
+    if (!token) {
+        res.status(401).json({ msg: "you must send token" })
+    }
+    res.json({ msg: "all ok" })
+})
+
 router.post("/", async (req, res) => {
     const validBady = validUser(req.body);
     if (validBady.error) {
