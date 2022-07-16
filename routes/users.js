@@ -15,7 +15,8 @@ router.get("/usersInfo", async (req, res) => {
     }
     try {
         let decodeToken = jwt.verify(token, "MONKYSSECRET");
-        res.json({ msg: "all ok" })
+        let user = UsersModel.findOne({ _id: decodeToken._id });
+        res.json(user)
     }
     catch (err) {
         res.status(401).json({ msg: "token invalid or expired 333" })
