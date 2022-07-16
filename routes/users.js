@@ -12,7 +12,14 @@ router.get("/usersInfo", async (req, res) => {
     if (!token) {
         res.status(401).json({ msg: "you must send token" })
     }
-    res.json({ msg: "all ok" })
+    try {
+        let decodeToken = jwt.verify(token, "MONKYSSECRET");
+        res.json({ msg: "all ok" })
+    }
+    catch (err) {
+        res.status(401).json({ msg: "token invalid or expired 333" })
+    }
+
 })
 
 router.post("/", async (req, res) => {
