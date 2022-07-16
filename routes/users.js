@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     res.json({ msg: "express work perfect 12:36" })
 })
 
-router.get("/usersInfo", async (req, res) => {
+router.get("/userInfo", async (req, res) => {
     let token = req.header("x-api-key");
     if (!token) {
         res.status(401).json({ msg: "you must send token" })
