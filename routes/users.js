@@ -59,13 +59,6 @@ router.post("/login", async (req, res) => {
     res.json({ token: newToken })
 })
 
-router.delete("/logout", (req, res) => {
-    req.user.removeToken(req.token).then(() => {
-        res.status(200).send("user logged out");
-    }).catch(() => {
-        res.status(401).send();
-    });
-})
 
 
 module.exports = router;
