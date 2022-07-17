@@ -25,6 +25,16 @@ exports.genToken = (_userId) => {
     return token
 }
 
+userSchema.methods.removeToken = function (token) {
+    const user = this;
+
+    return user.update({
+        $pull: {
+            token: { token }
+        }
+    })
+}
+
 exports.validUser = (_bodyData) => {
     const joiSchema = Joi.object({
         name: Joi.string().min(2).max(99).required(),
