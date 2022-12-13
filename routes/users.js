@@ -4,8 +4,10 @@ const { UsersModel, validUser, validLogin, genToken } = require("../models/Users
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
-router.get("/", (req, res) => {
-    res.json({ msg: "express work perfect 12:36" })
+router.get("/", async (req, res) => {
+    const data = await UsersModel.find({});
+    res.json(data)
+
 })
 
 router.get("/userInfo", async (req, res) => {
