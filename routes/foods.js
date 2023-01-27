@@ -9,7 +9,10 @@ router.use(cors({
 
 
 router.get("/", async (req, res) => {
-    const data = await FoodModel.find({});
+    let perPage = 5;
+    let page = req.query.page ? req.query.page - 1 : 0
+
+    const data = await FoodModel.find({}).limit(perPage).skip(page * perPage);
     res.json(data)
 })
 
