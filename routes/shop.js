@@ -24,18 +24,17 @@ router.get("/category2/:catName", (req, res) => {
 
 //?min=8
 router.get("/query", (req, res) => {
+    let min = req.query.min;
+    const temp_ar = prods_ar.filter(item => {
+        return Number(item.price) > min;
+    })
+    res.json(temp_ar)
+})
+// 
+router.get("/single/:id", (req, res) => {
     let id = req.params.id
     let prod = prods_ar.find(item => item.id == id);
     res.json(prod);
-})
-
-// QueryId
-router.get("/shingle/:id", (req, res) => {
-    const categoryQ = req.params.catName;
-    const temp_ar = prods_ar.filter(item => {
-        return item.cat == categoryQ;
-    })
-    res.json(temp_ar)
 })
 
 module.exports = router;
