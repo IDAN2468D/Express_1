@@ -30,7 +30,7 @@ router.get("/query", (req, res) => {
     })
     res.json(temp_ar)
 })
-// 
+// /single/:id
 router.get("/single/:id", (req, res) => {
     let id = req.params.id
     let prod = prods_ar.find(item => item.id == id);
