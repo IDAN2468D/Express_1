@@ -2,26 +2,11 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 
 const foodSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: false
-    },
-    img: {
-        type: String,
-        require: false
-    },
-    cal: {
-        type: Number,
-        required: false
-    },
-    price: {
-        type: Number,
-        required: false
-    },
-    Details: {
-        type: Array,
-        required: false
-    }
+    name: { type: String, required: false },
+    img: { type: String, require: false },
+    cal: { type: Number, required: false },
+    price: { type: Number, required: false },
+    Details: { type: Array, required: false }
 });
 
 const FoodModel = mongoose.model("foods", foodSchema);
