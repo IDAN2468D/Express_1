@@ -6,6 +6,7 @@ const foodSchema = new mongoose.Schema({
     img: { type: String, require: false },
     cal: { type: Number, required: false },
     price: { type: Number, required: false },
+    sqft: { type: Number, required: false },
     Details: { type: Array, required: false }
 });
 
